@@ -1,0 +1,41 @@
+{
+  "name": "NokiJS",
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "Pete Mertz",
+      "email": "peter.s.mertz@gmail.com"
+    }
+  ],
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "bower install"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.6.6",
+    "bower": "*",
+    "chai": "^1.9.1",
+    "express": "^4.8.6",
+    "mongoose": "~3.8.9",
+    "redis": "^0.12.1",
+    "socket.io": "^1.0.6",
+    "markdown": "*",
+    "friendjs": "*",
+    "petemertz-express-validator": "*"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.0.0",
+    "grunt-concurrent": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nodemon": "^0.3.0"
+  }
+}

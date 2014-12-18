@@ -1,0 +1,18 @@
+<div class="row" style="margin-top: 25px">
+	<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12">
+		<h1>
+			{{title}}
+		</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12" ng-bind-html="body">
+	</div>
+</div>
+
+<div class="row" ng-show="allowEdits">
+	<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12">
+		<a href="#/wiki/{{routeTitle}}/edit">Edit</a>
+	</div>
+</div>

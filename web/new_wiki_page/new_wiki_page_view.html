@@ -1,0 +1,31 @@
+<div class="row" style="margin-top: 25px">
+	<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12">
+		<form ng-submit="newWikiPage()" novalidate name="wikiForm">
+			<legend class="text-center">
+				<b>
+					New Page
+				</b>
+			</legend>
+			<div class="form-group error-message text-danger bg-danger" ng-show="formErrors.length > 0">
+				<div ng-repeat="error in formErrors">
+					{{error}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Title</label>
+				<input type="text" class="form-control" required ng-model="title" ng-blur="validateField($event)" placeholder="Article Title" name="title"> 
+			</div>
+			<div class="form-group">
+				<label>Body</label>		
+				<textarea width="100%" class="form-control" required ng-model="body" ng-blur="validateField($event)" placeholder="Body" name="body" form="wikiForm"/>
+			</div>
+			<div class="help-block">
+				Please keep it clean, and keep it classy!
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-lg btn-primary btn-block signup-btn" value="Create The Page">
+			</div>
+
+		</form>
+	</div>
+</div>
