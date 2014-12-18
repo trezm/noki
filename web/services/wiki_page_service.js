@@ -57,6 +57,30 @@ var init = function(app) {
 			})
 		}
 
+		var getWikiPages = function(form, callback) {
+			callback = callback ? callback : function() {};
+			var request = $http({
+				method: "GET",
+				url: "/pages?title=" + form.title,
+				headers: {
+					'Content-Type': 'application/json',
+					'sessionhash': $cookies.sessionHash
+				}
+			});
+
+			request.success(function(results, status, headers, config) {
+				if (!results.error) {
+					callback(null, results);
+					return;
+				}
+				callback(null);
+			});
+
+			request.error(function(error) {
+				callback(error);
+			})
+		}
+
 		var editWikiPage = function(form, callback) {
 			callback = callback ? callback : function() {};
 			var requestData = {
@@ -90,6 +114,7 @@ var init = function(app) {
 
 		this.createWikiPage = createWikiPage;
 		this.getWikiPage = getWikiPage;
+		this.getWikiPages = getWikiPages;		
 		this.editWikiPage = editWikiPage;
 	});
 }

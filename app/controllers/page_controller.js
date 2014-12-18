@@ -58,6 +58,25 @@ module.exports.PageControllerRoutes = {
 		}
 	},
 
+	readQuery: function(req, res) {
+		if (validate({
+				title: 'required'
+			}, req, res)) {
+			module.exports.PageController.read({
+					title: new RegExp('.*' + req.query.title + '.*', "i")
+				},
+				function(error, results) {
+					if (results.length > 0) {
+						res.json(results);
+					} else {
+						res.status(404).json({
+							error: 'page not found'
+						});
+					}
+				})
+		}
+	},
+
 	update: function(req, res) {
 		if (validate({
 				title: 'required',

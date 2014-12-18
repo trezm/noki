@@ -8,9 +8,15 @@ var init = function(app) {
 				$cookies.sessionHash != null;
 		}
 
+		var search = function() {
+			window.location = "/#/wiki/search?query=" + $scope.searchText;
+		}
+
 		$scope.isLoggedIn = isLoggedIn;
 		$scope.first = '';
 		$scope.last = '';
+		$scope.searchText = '';
+		$scope.search = search;
 
 		$scope.$watch(function() {
 				return $cookies.sessionHash;

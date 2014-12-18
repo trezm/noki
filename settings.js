@@ -3,7 +3,8 @@ var env = process.node_env;
 // Default settings go here
 var settings = {
     MONGO_URL: 'localhost',	
-    MONGO_DB: 'dev',
+    MONGO_DB: 'noki-dev',
+    MONGO_PORT: 27017,
     
     REDIS_PORT: 6379,
     REDIS_HOST: 'localhost',
@@ -25,6 +26,6 @@ if ( env == 'dev' ) {
     LOG_LEVEL = 1;
 }
 
-//console.log( "Using env:", env );
+console.log( "Using env:", env );
 
 module.exports = settings;

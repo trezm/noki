@@ -8,12 +8,12 @@ var bodyParser = require( 'body-parser' );
 
 // Mongoose
 var mongoose = require( 'mongoose' );
-mongoose.connect( settings.MONGO_URL );
+mongoose.connect("mongodb://" + settings.MONGO_URL + ":" + settings.MONGO_PORT + "/" + settings.MONGO_DB);
 
 var db = mongoose.connection;
 db.on( 'error', console.error.bind( console, '[ERROR]' ) );
 db.on( 'open', function callback () {
-
+	console.log('opened mongoose connection');
 });
 
 app.use( bodyParser() );

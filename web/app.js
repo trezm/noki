@@ -37,6 +37,10 @@ var app = angular
 					controller: 'NewWikiPageController',
 					templateUrl: 'new_wiki_page/new_wiki_page_view.html'
 				});
+				$routeProvider.when('/wiki/search', {
+					controller: 'SearchWikiPageController',
+					templateUrl: 'search_wiki_page/search_wiki_page_view.html'
+				});
 				$routeProvider.when('/wiki/:title', {
 					controller: 'WikiPageController',
 					templateUrl: 'wiki_page/wiki_page_view.html'
@@ -56,6 +60,7 @@ require('./signup_page/signup_page_controller')(app);
 require('./login_page/login_page_controller')(app);
 require('./logout_page/logout_page_controller')(app);
 
+require('./search_wiki_page/search_wiki_page_controller')(app);
 require('./new_wiki_page/new_wiki_page_controller')(app);
 require('./wiki_page/wiki_page_controller')(app);
 require('./edit_wiki_page/edit_wiki_page_controller')(app);

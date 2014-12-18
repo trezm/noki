@@ -17,6 +17,7 @@ module.exports.router = function(app) {
 	app.post('/page', friendjs.validate, PageControllerRoutes.create);
 	app.put('/pages/:title', friendjs.validate, PageControllerRoutes.update);
 	app.get('/pages/:title', friendjs.validate, PageControllerRoutes.read);
+	app.get('/pages', friendjs.validate, PageControllerRoutes.readQuery);
 
 	app.get('/*', function(req, res) {
 		res.sendfile('./dist/' + req.path);
