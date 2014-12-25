@@ -36,9 +36,11 @@ var init = function(app) {
 				function(error, results) {
 					if (error) {
 						console.log('Error:', error);
-						return;
 					}
-					window.location = '/';
+					else
+					{
+						window.location = '/#/confirm';
+					}
 				}
 			);
 		}

@@ -53,6 +53,9 @@ var app = angular
 					controller: 'EditWikiPageController',
 					templateUrl: 'edit_wiki_page/edit_wiki_page_view.html'
 				});
+				$routeProvider.when('/confirm', {
+					templateUrl: 'confirmation_page/confirmation_page_view.html'
+				});
 				$routeProvider.otherwise({
 					redirectTo: '/'
 				});
