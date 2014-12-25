@@ -33,6 +33,10 @@ var app = angular
 					controller: 'SignupPageController',
 					templateUrl: 'signup_page/signup_page_view.html'
 				});
+				$routeProvider.when('/admin', {
+					controller: 'AdminPageController',
+					templateUrl: 'admin_page/admin_page_view.html'
+				});
 				$routeProvider.when('/wiki/new', {
 					controller: 'NewWikiPageController',
 					templateUrl: 'new_wiki_page/new_wiki_page_view.html'
@@ -59,6 +63,7 @@ var app = angular
 require('./signup_page/signup_page_controller')(app);
 require('./login_page/login_page_controller')(app);
 require('./logout_page/logout_page_controller')(app);
+require('./admin_page/admin_page_controller')(app);
 
 require('./search_wiki_page/search_wiki_page_controller')(app);
 require('./new_wiki_page/new_wiki_page_controller')(app);

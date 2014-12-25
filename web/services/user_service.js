@@ -52,6 +52,7 @@ var init = function(app) {
 			request.success(function(results) {
 				var createdUser = results;
 				if (!results.error) {
+/*
 					SessionService.createSession({
 						email: form.email,
 						password: form.password
@@ -60,10 +61,53 @@ var init = function(app) {
 							console.error('Error while creating new user:', error);
 							return;
 						}
+*/
 						callback(null, createdUser);
-					})
+//					})
 				} else {
 					callback(results.error, createdUser);
+				}
+			});
+		}
+
+		var getUnapprovedUsers = function(callback) {
+			var request = $http({
+				method: "GET",
+				url: "/users/unapproved",
+				headers: {
+					'Content-Type': 'application/json',
+					'sessionhash': $cookies.sessionHash
+				},
+				data: {}
+			});
+
+			request.success(function(results) {
+				console.log('results:', results);
+				if (!results.error) {
+					callback(null, results);
+				} else {
+					callback(results.error);
+				}
+			});
+		}
+
+		var approveUser = function(userId, callback) {
+			var request = $http({
+				method: "POST",
+				url: "/users/" + userId + "/approve",
+				headers: {
+					'Content-Type': 'application/json',
+					'sessionhash': $cookies.sessionHash
+				},
+				data: {}
+			});
+
+			request.success(function(results) {
+				console.log('results:', results);
+				if (!results.error) {
+					callback(null, results);
+				} else {
+					callback(results.error);
 				}
 			});
 		}
@@ -100,6 +144,8 @@ var init = function(app) {
 			return false;
 		}
 
+		this.approveUser = approveUser;
+		this.getUnapprovedUsers = getUnapprovedUsers;
 		this.getLoggedInUser = getLoggedInUser;
 		this.newUser = newUser;
 		this.login = login;

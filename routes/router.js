@@ -12,7 +12,7 @@ module.exports.router = function(app) {
 		});
 
 	// Set up Users and Friends
-	friendjs.routes(app);
+	friendjs.routes(app, settings);
 
 	app.post('/page', friendjs.validate, PageControllerRoutes.create);
 	app.put('/pages/:title', friendjs.validate, PageControllerRoutes.update);

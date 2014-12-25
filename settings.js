@@ -2,7 +2,7 @@ var env = process.node_env;
 
 // Default settings go here
 var settings = {
-    MONGO_URL: 'localhost',	
+    MONGO_URL: 'localhost', 
     MONGO_DB: 'noki-dev',
     MONGO_PORT: 27017,
     
@@ -13,6 +13,18 @@ var settings = {
     PORT: 3000,
 
     LOG_LEVEL: 2,
+
+    // Mandrill stuff
+    MANDRILL_API_KEY: 'K4NsYN27hNA4P6D03gPhCw',
+    MANDRILL_CONFIRMATION_ADDRESS: 'http://localhost:3000/confirm',
+    MANDRILL_FROM: {
+        "email": "mrroboto@localhost.com",
+        "name": "Mr. Roboto"
+    },
+    MANDRILL_SUBJECT: "Confirm your email",
+
+    ADMIN_ACCOUNTS_ENABLED: true,
+    ACCOUNT_APPROVAL_ENABLED: true
 }
 
 if ( typeof env == 'undefined' ) {

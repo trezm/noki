@@ -10,8 +10,9 @@
 <div class="row" style="margin-top: 25px">
 	<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12">
 		<ul class="list-unstyled">
-			<li ng-repeat="page in pages track by $index">
-				<a href="/#/wiki/{{page.underscoredTitle}}">{{page.title}}</a>
+			<li ng-repeat="user in unapprovedUsers track by $index">
+				{{user.first}} {{user.last}} ({{user.email}})
+				<input type="button" class="btn btn-success pull-right" ng-click="approveUser(user)" value="Approve"/>
 			</li>
 		</ul>
 	</div>

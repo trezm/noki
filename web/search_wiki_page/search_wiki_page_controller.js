@@ -13,7 +13,7 @@ var init = function(app) {
 			},
 			function(error, results) {
 				if (error) {
-					console.error(error.error);
+					$scope.errors = [error];
 				}
 				else if (results)
 				{
@@ -28,6 +28,7 @@ var init = function(app) {
 
 		$scope.getWikiPages = getWikiPages;
 		$scope.pages = [];
+		$scope.errors = [];
 		$scope.getWikiPages();
 	});
 }

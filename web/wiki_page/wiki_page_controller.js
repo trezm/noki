@@ -13,8 +13,8 @@ var init = function(app) {
 			},
 			function(error, results) {
 				if (error) {
-					$scope.title = "Weird!?";
-					$scope.body = $sce.trustAsHtml(markdown.toHTML(error.error));
+					$scope.errors = [error];
+					$scope.title = "Weird!?";				
 				}
 				else if (results)
 				{
@@ -30,6 +30,7 @@ var init = function(app) {
 			})
 		}
 
+		$scope.errors = [];
 		$scope.getWikiPage = getWikiPage;
 		$scope.title = "";
 		$scope.body = "";
