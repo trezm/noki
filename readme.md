@@ -1,5 +1,5 @@
 # NokiJS
-A template project using NodeJS, MongoDB, and AngularJS
+A NodeJS based Wiki framework.  It includes private wiki pages and a markdown style page.
 
 ### Set Up
 NPM and Bower are required to set up this repository, find the instructions to install below.
