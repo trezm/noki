@@ -10,7 +10,7 @@ var settings = {
     REDIS_HOST: 'localhost',
     REDIS_MAX_ATTEMPTS: 5,
 
-    PORT: 3000,
+    PORT: process.env.PORT || 3000,
 
     LOG_LEVEL: 2,
 
