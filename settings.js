@@ -1,4 +1,4 @@
-var env = process.node_env;
+var env = process.env.NODE_ENV;
 
 // Default settings go here
 var settings = {
@@ -15,8 +15,8 @@ var settings = {
     LOG_LEVEL: 2,
 
     // Mandrill stuff
-    MANDRILL_API_KEY: 'K4NsYN27hNA4P6D03gPhCw',
-    MANDRILL_CONFIRMATION_ADDRESS: 'http://localhost:3000/confirm',
+    MANDRILL_API_KEY: process.env.MANDRILL_API_KEY || 'K4NsYN27hNA4P6D03gPhCw',
+    MANDRILL_CONFIRMATION_ADDRESS: process.env.MANDRILL_CONFIRMATION_ADDRESS || 'http://localhost:3000/confirm',
     MANDRILL_FROM: {
         "email": "mrroboto@localhost.com",
         "name": "Mr. Roboto"
